@@ -1,0 +1,25 @@
+{
+  // Наследуем базовые настройки из основного tsconfig.json
+  "extends": "./tsconfig.json",
+  // Исключаем файлы, не нужные для production сборки
+  "exclude": [
+    "**/*test.ts", // Исключаем дополнительные тестовые файлы
+    "**/*e2e-spec.ts", // Исключаем e2e тесты
+    "**/*.mock.ts" // Исключаем mock-файлы
+  ],
+  // Включаем только исходные файлы приложения
+  "include": [
+    "src/**/*"
+  ],
+  // Специфичные настройки для production сборки
+  "compilerOptions": {
+    "sourceMap": false, // Отключаем source maps в production
+    "removeComments": true, // Удаляем комментарии для уменьшения размера
+    "incremental": false, // Отключаем инкрементальную компиляцию
+    "declaration": true, // Генерируем .d.ts файлы для библиотеки
+    "declarationMap": false, // Отключаем source maps для .d.ts файлов
+    "importHelpers": true, // Использование helpers из tslib для уменьшения размера
+    "noEmitOnError": true, // Не генерируем файлы при ошибках TypeScript
+    "preserveConstEnums": true // Сохраняем const enums в скомпилированном коде
+  }
+}

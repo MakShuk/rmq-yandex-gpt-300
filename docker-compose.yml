@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  gpt-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: yandex-gpt-bot
+    restart: always
+    networks:
+      - message-broker-network
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./envs/.env.production:/opt/app/envs/.env.production
+  #   ports:
+  #    - "3000:3000"  # Если нужен доступ к порту
+
+networks:
+  message-broker-network:
+    name: rabbitmq-network
+    driver: bridge
