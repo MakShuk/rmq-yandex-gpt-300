@@ -43,6 +43,10 @@
         "**/project.json": false,
         "**/tsconfig.build.json": false,
         "**/.eslintrc.js": false,
-        "**/nest-cli.json": false
+        "**/nest-cli.json": false,
+        ".git": true,
+        ".vscode": true,
+        ".eslintrc.js": true,
+        "envs/.gitkeep": true
     }
 }
