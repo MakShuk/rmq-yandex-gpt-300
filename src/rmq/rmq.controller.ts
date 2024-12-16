@@ -1,7 +1,7 @@
 import { Body, Controller } from '@nestjs/common';
 import { SummaryService } from './text-summary.service';
 import { RMQRoute, RMQValidate } from 'nestjs-rmq';
-import { SummaryShortCreate, SummaryUrlShortCreate } from 'contracts/summary.create';
+import { SummaryShortCreate, SummaryUrlShortCreate } from 'rabbit-mq-contracts';
 
 @Controller()
 export class RmqController {
