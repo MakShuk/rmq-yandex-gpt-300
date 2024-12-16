@@ -17,8 +17,10 @@ export class PuppeteerService {
   }
 
   private static readonly CONFIG: BrowserConfig = {
+    executablePath: '/usr/bin/google-chrome',
     headless: true,
-    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-gpu',
+      '--disable-dev-shm-usage'],
     defaultViewport: { width: 1080, height: 1024 },
   };
 

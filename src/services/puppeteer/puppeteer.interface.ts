@@ -1,4 +1,5 @@
 export interface BrowserConfig {
+  executablePath: string;
   headless: boolean;
   args: string[];
   defaultViewport: ViewportConfig;

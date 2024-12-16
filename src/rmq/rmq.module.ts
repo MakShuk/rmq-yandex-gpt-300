@@ -9,4 +9,4 @@ import { SummaryService } from './text-summary.service';
   controllers: [RmqController],
   providers: [SummaryService, PuppeteerService],
 })
-export class RmqModule {}
+export class RmqModule { }

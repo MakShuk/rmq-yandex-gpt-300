@@ -4,32 +4,22 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: summary-api
-    networks:
+    networks:                 # Using this option
       - message_broker_network
     environment:
       - RABBITMQ_URL=amqp://message_broker:5672
-    # Добавляем DNS серверы
     dns:
       - 8.8.8.8
       - 8.8.4.4
-    # Добавляем параметры для работы с сетью
     extra_hosts:
       - "host.docker.internal:host-gateway"
-    # Добавляем параметры для сети
-    network_mode: "bridge"
-    # Добавляем параметры для безопасного доступа к хосту
     cap_add:
       - NET_ADMIN
-
-volumes:
-  rabbitmq_data:
-    name: rabbitmq_persistent_data
 
 networks:
   message_broker_network:
     name: rabbitmq_network
     driver: bridge
-    # Добавляем явные настройки для сети
     ipam:
       driver: default
       config:

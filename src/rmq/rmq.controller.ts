@@ -5,7 +5,7 @@ import { SummaryShortCreate, SummaryUrlShortCreate } from 'contracts/summary.cre
 
 @Controller()
 export class RmqController {
-  constructor(private readonly summary: SummaryService) {}
+  constructor(private readonly summary: SummaryService) { }
 
   @RMQValidate()
   @RMQRoute(SummaryShortCreate.topic)
